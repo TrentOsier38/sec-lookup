@@ -60,8 +60,7 @@ h1 {
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
-  max-height: 90vh;
-  margin: 50px auto; /* Margin to separate from the first content section */
+  max-height: 90vh;/* Margin to separate from the first content section */
 }
 
 h1, p {
@@ -534,3 +533,6 @@ footer {
     }
   }
   
+  .grecaptcha-badge{
+    display: none !important;
+  }
