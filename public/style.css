@@ -1,0 +1,536 @@
+/* General Styles */
+body {
+  font-family: 'Open Sans', Arial, sans-serif; /* Use Open Sans font */
+  background-color: #f5f8fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Top Navigation with Logo */
+.topnav {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.topnav img {
+  max-width: 200px;
+  height: auto;
+}
+
+/* Headline */
+.headline {
+  text-align: center;
+  font-size: 1.7rem; /* Keep headline size */
+  font-weight: 700; /* Semi-bold for emphasis */
+  margin: 30px 0;
+  color: #ff7226;
+}
+
+/* Subheader */
+.subheader {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400; /* Slightly lighter than the headline */
+    color: #333; /* Dark gray for readability */
+    margin-top: 10px;
+    margin-bottom: 10px; /* Add spacing before the next section */
+  }
+
+/* h1 */
+h1 {
+  text-align: center;
+  font-size: 1.35rem; /* Reduce size slightly */
+  font-weight: 600; /* Keep semi-bold */
+  margin-bottom: 20px; /* Ensure spacing below h1 */
+}
+
+/* Form Container */
+.container {
+  width: 90%;
+  max-width: 600px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  max-height: 90vh;
+  margin: 50px auto; /* Margin to separate from the first content section */
+}
+
+h1, p {
+  text-align: center;
+}
+h2 {
+  margin-top: 0;
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+input[type="text"], select, button {
+  width: calc(100% - 20px); /* Ensure it fits within the container */
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+input[type="text"].highlight {
+  border: 2px solid #FF5733; /* Highlight phone field */
+  background-color: #fff8f0;
+}
+button {
+  background: #007BFF;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-family: 'Open Sans', Arial, sans-serif; /* Ensure consistent font */
+  font-weight: 700; /* Make the button text bold */
+  padding: 10px 20px; /* Optional: ensure good padding */
+  border-radius: 5px; /* Keep the rounded corners */
+  text-transform: uppercase; /* Optional: make button text uppercase */
+}
+button:hover {
+  background: #0056b3;
+}
+
+
+/* Results Section Styling */
+.results {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: none; /* Remove any border */
+    box-shadow: none; /* Remove any shadow effect */
+  }
+  
+  .results h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  #results-list {
+    display: flex;
+    flex-direction: column; /* Stack results vertically */
+    gap: 15px; /* Space between results */
+  }
+  
+  .result-item {
+    padding: 15px;
+    border: none; /* Remove the border */
+    border-radius: 8px; /* Keep the rounded corners */
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .result-item:hover {
+    background-color: #B5E2F9; /* Light blue background on hover */
+    box-shadow: none; /* Ensure no shadow is applied */
+  }
+  
+  .result-item span {
+    display: block; /* Ensure each piece of data is on a new line */
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .result-item span:first-child {
+    font-weight: 700; /* Make the name bold */
+    color: #333;
+  }
+  
+/* Refine Your Search Link */
+#refine-search a {
+    display: block;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #007BFF;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+.modify-search {
+    color: #007BFF;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.form-section {
+  display: none;
+}
+.refine-search, .redo-search {
+  text-align: center;
+  margin-top: 20px;
+}
+.refine-search a, .redo-search a {
+  color: #007BFF;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.refine-search a:hover, .redo-search a:hover {
+  color: #0056b3;
+}
+
+.modal {
+    display: none; /* Ensure this is overridden by JS to "block" */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  .modal-overlay {
+    display: none; /* Ensure this is overridden by JS to "block" */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }  
+
+
+/* Content Sections */
+.content-section {
+    width: 100vw; /* Full viewport width */
+    margin: 0; /* Remove any margins */
+    padding: 50px 0; /* Top and bottom padding for spacing */
+    position: relative; /* Ensure it doesn't inherit container constraints */
+    left: 50%; /* Reset alignment */
+    transform: translateX(-50%); /* Center-align the section */
+  }
+  
+  .content-section.light {
+    background-color: #ffffff; /* White background */
+  }
+  
+  .content-section.dark {
+    background-color: #f5f8fa; /* Light blue background */
+  }
+  
+  .content-container {
+    max-width: 800px; /* Same width as the form container */
+    margin: 0 auto; /* Center-align the inner content */
+    padding: 0 20px; /* Add some padding for small screens */
+  }
+
+  /* Stats Section */
+.stats-section {
+    background-color: #fff; /* Light gray/blue background */
+    padding: 50px 0; /* Spacing around the section */
+  }
+  
+  .stats-section h2 {
+    font-size: 28px;
+    font-weight: 700; /* Bold */
+    text-align: center;
+    color: #333; /* Dark gray for the heading */
+    margin-bottom: 15px;
+  }
+  
+  .stats-section p {
+    font-size: 18px;
+    font-weight: 400; /* Regular weight */
+    text-align: center;
+    color: #666; /* Medium gray for the subheading */
+    margin-bottom: 40px;
+  }
+  
+  .stats-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Ensures responsiveness for smaller screens */
+  }
+  
+  .stat-block {
+    text-align: center;
+    max-width: 200px; /* Keeps the blocks from being too wide */
+    margin: 0 10px; /* Spacing between blocks */
+  }
+  
+  .stat-block h3 {
+    font-size: 36px;
+    font-weight: 700; /* Bold for numbers */
+    color: #002b5c; /* Deep blue */
+    margin-bottom: 10px;
+  }
+  
+  .stat-block p {
+    font-size: 16px;
+    font-weight: 400; /* Regular weight for text */
+    color: #333; /* Dark gray for the descriptions */
+  }
+  
+/* Testimonial Section */
+.testimonial-section {
+    background-color: #f5f8fa;
+    padding: 40px 20px;
+  }
+  
+  .testimonial-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Individual Testimonial */
+  .testimonial {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .testimonial-logo img {
+    display: block;
+    max-width: 120px;
+    margin: 0 auto 20px;
+  }
+  
+  .testimonial-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  
+  .testimonial-content blockquote {
+    font-size: 18px;
+    font-style: italic;
+    color: #002b5c;
+    margin: 10px 0 20px;
+  }
+  
+  .testimonial-content p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Attribution Section */
+  .testimonial-attribution {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .testimonial-photo {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .testimonial-details p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .testimonial-details .name {
+    font-weight: 700;
+  }
+  
+  .testimonial-disclaimer {
+    font-size: 9px;
+    color: #888;
+    margin-top: 20px;
+    line-height: 1.5;
+  }
+  
+  /* Header for Testimonial Section */
+.testimonial-header {
+    text-align: center;
+    margin-bottom: 30px; /* Space between the header and the testimonials */
+  }
+  
+  .testimonial-header h2 {
+    font-size: 24px;
+    font-weight: 700; /* Bold for emphasis */
+    color: #333; /* Dark gray */
+    margin-bottom: 10px; /* Space below the heading */
+  }
+  
+  .testimonial-header p {
+    font-size: 16px;
+    font-weight: 400; /* Regular weight */
+    color: #555; /* Medium gray */
+    margin: 0; /* No extra spacing below */
+  }
+  
+/* Features Section */
+.features-section {
+    background-color: #fff; /* Light gray background */
+    width: 100%; /* Make the background span the full width of the screen */
+    padding: 50px 0; /* Top and bottom padding for spacing */
+    box-sizing: border-box; /* Include padding in total width/height */
+  }
+  
+  .features-container {
+    max-width: 800px; /* Constrain content width */
+    margin: 0 auto; /* Center the content horizontally */
+    padding: 0 20px; /* Add padding for smaller screens */
+  }
+  
+  .features-container h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333; /* Dark gray */
+    margin-bottom: 20px;
+    text-align: center; /* Center align heading */
+  }
+  
+  .features-subheader {
+    font-size: 18px;
+    color: #555; /* Medium gray */
+    margin-bottom: 30px;
+    line-height: 1.6;
+    text-align: center; /* Center align subheader */
+  }
+  
+  .features-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .feature-item {
+    margin-bottom: 20px; /* Add spacing between each feature */
+  }
+  
+  .feature-item p {
+    margin: 0;
+    padding: 0;
+    text-align: left; /* Aligns the paragraph to the left */
+    line-height: 1.5; /* Improves readability */
+    color: #333; /* Subtle color for the text */
+  }
+  
+  .feature-item strong {
+    display: block; /* Makes the bolded feature name appear on its own line */
+    font-weight: bold;
+    margin-bottom: 5px; /* Adds space between the bold title and the paragraph */
+    color: #000; /* Ensure the bolded feature title is prominent */
+  }
+  
+/* Call-to-Action Section */
+.cta-section {
+    background-color: #002b5c; /* Dark blue background */
+    color: #fff; /* White text */
+    text-align: center;
+    padding: 50px 20px; /* Spacing for the section */
+    width: 100%; /* Extend the background to the full screen width */
+    margin: 0; /* Remove default margins */
+    box-sizing: border-box; /* Ensure padding is included in width calculations */
+  }
+  
+  .cta-container {
+    max-width: 800px; /* Constrain content width */
+    margin: 0 auto; /* Center the content */
+  }
+  
+  .cta-container h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  
+  .cta-container p {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 25px;
+  }
+  
+  .cta-container button {
+    background-color: #007BFF; /* Light blue button */
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-container button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Disclaimer Styling */
+.footer-container {
+    max-width: 800px; /* Restrict width to match content width */
+    margin: 0 auto;
+    text-align: left; /* Align text to the left */
+  }
+  
+  .footnote {
+    font-size: 12px; /* Smaller font size for the disclaimer */
+    color: #888; /* Light gray color */
+    line-height: 1.5;
+    margin-top: 20px;
+  }
+
+/* Footer styling */
+footer {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    color: #666;
+  }
+
+  /* Loading Modal */
+  .loading-modal {
+    display: none; /* Ensure it is initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00496e; /* dark blue background */
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+  }
+  
+  .loading-spinner {
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
